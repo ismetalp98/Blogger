@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blooger Explore</title>
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="../css/all.css">
+
+</head>
+
+<body>
+
+    <!--------------------------- Firebase Setup   ------------------------->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+
+
+    <script>
+  // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAlbJhpmsExKzqpxM6SDo-xc16TLdBHUbc",
+            authDomain: "webproject-28839.firebaseapp.com",
+            databaseURL: "https://webproject-28839.firebaseio.com",
+            projectId: "webproject-28839",
+            storageBucket: "webproject-28839.appspot.com",
+            messagingSenderId: "957068117766",
+            appId: "1:957068117766:web:22d2114fa7a0071e6a8087",
+            measurementId: "G-H90QKLM9NP"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!----------xx----------------- Firebase Setup   ----------xx--------------->
+
+    <!--------------------------- NavBar   ------------------------->
+    <nav class="nav">
+        <h2 class="login">Login</h2>
+        <a href="./signuppage.html">
+            <button class="signup"> Sign Up</button>
+        </a>
+    </nav>
+    <!------------xx--------------- NavBar   ----------xx--------------->
+
+
+    <main>
+
+         <!--------------------------- Elements for login   ------------------------->
+        <section class="login-page">
+            <div class="login-form">
+                <div class="login-inputs flex-row">
+                    <h1>email</h1>
+                    <input type="text" id="input-email">
+                </div>
+                <div class="login-inputs flex-row">
+                    <h1>password</h1>
+                    <input type="password" id="input-pss">
+                </div>
+                <a href="#">
+                    <button class="btn" onclick="logIn()">Sign In</button>
+                </a>
+                <hr>
+                <a href="#" class="forgot" onclick="forgotpss()">Forgot my Password</a>
+                <hr>
+                <a href="#">
+                    <button class="google btn-social" onclick="logIngoogle()">
+                        <i class="fab fa-google" aria-hidden="true"></i>
+                    </button>
+                </a>
+                <a href="#">
+                    <button class="facebook btn-social" onclick="logInfacebook()">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                </a>
+            </div>
+        </section>
+         <!------------xx--------------- Elements for login   ------------xx------------->
+
+    </main>
+    <script src="../js/login.js"></script>
+    
+</body>
+
+</html>
+<section></section>
