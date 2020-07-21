@@ -1,12 +1,14 @@
 function logIn(){
     var email = document.getElementById("input-email").value;
     var pss = document.getElementById("input-pss").value;
-    firebase.auth().signInWithEmailAndPassword(email, pss).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
-      });
+    firebase.auth().signInWithEmailAndPassword(email, pss).then(function(){
+      window.location.href = "../htmls/userpage.html"
+    }).catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorMessage);
+    });
 }
 
 function logIngoogle(){
@@ -29,9 +31,6 @@ function logIngoogle(){
       });
 }
 
-function signup(){
-  
-}
 
 /*firebase.auth().onAuthStateChanged(function(user) {
     if (user) {

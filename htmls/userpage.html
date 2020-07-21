@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Blooger</title>
+    
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="../css/all.css">
+    
+    
+        <!-- Custom Style   -->
+        <link rel="stylesheet" href="../css/userpage.css">
+    
+    </head>
+
+<body>
+
+    
+
+    <!----------xx----------------- Firebase Setup   ----------xx--------------->
+
+    <!--------------------------- NavBar   ------------------------->
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Blooger</a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Category</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Archive</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Pages</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="../htmls/login.html"><button class = "signup">Log Out</button></i></a>
+            </div>
+        </div>
+    </nav>
+    <!------------xx--------------- NavBar   ----------xx--------------->
+
+    <main>
+
+        <!--------------------------- Elements for login   ------------------------->
+       <section class="login-page">
+           <div class="login-form">
+               <div class="login-inputs flex-row">
+                   <h1>email</h1>
+                   <p id="email"></p>
+               </div>
+               <div class="login-inputs flex-row">
+                   <h1>name</h1>
+                   <p id="name"></p>
+               </div>
+               <div class="login-inputs flex-row">
+                   <h1>birth</h1>
+                   <p id="birth"></p>
+               </div>
+           </div>
+       </section>
+        <!------------xx--------------- Elements for login   ------------xx------------->
+
+   </main>
+   
+
+   <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+
+    <script>
+  // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAlbJhpmsExKzqpxM6SDo-xc16TLdBHUbc",
+            authDomain: "webproject-28839.firebaseapp.com",
+            databaseURL: "https://webproject-28839.firebaseio.com",
+            projectId: "webproject-28839",
+            storageBucket: "webproject-28839.appspot.com",
+            messagingSenderId: "957068117766",
+            appId: "1:957068117766:web:22d2114fa7a0071e6a8087",
+            measurementId: "G-H90QKLM9NP"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Jquery Library file -->
+    <script src="../js/Jquery3.4.1.min.js"></script>
+
+
+    <!-- Custom Javascript file -->
+    <script src="../js/userpage.js"></script>
+     
+</body>
+
+</html>

@@ -1,22 +1,38 @@
 function signUp(){
-    var email = document.getElementById("input-email").value;
-    var password = document.getElementById("input-pss").value;
-    var name = document.getElementById("input-name").value;
+    var userEmail = document.getElementById("input-email").value;
+    var userPassword = document.getElementById("input-pss").value;
+    var userFullName = document.getElementById("input-name").value;
+    var birthdate = document.getElementById("input-birth").value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
-            
-      }).then(function(){
+
+        firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then((success) => {
             var user = firebase.auth().currentUser;
-            user.updateProfile({
-            displayName: name ,
-            }).then(function() {
-                window.location.href = "../htmls/userpage.html";
-            }).catch(function(error) {
-            // An error happened.
+            var uid;
+            if (user != null) {
+                uid = user.uid;
+            }
+            
+            var newUser = db.collection("Users").doc(uid);
+            var userData = {
+                userFullName: userFullName,
+                birthDate: birthdate,
+                userEmail: userEmail,
+                userFb: "https://www.facebook.com/",
+                userTw: "https://twitter.com/",
+                userGp: "https://plus.google.com/",
+                userBio: "User biography",
+            }
+            newUser.set(userData).then((value) => {
+                setTimeout(function(){
+                    window.location.replace("../Index.html");
+                }, 1000)
             });
-      });
+        }).catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            
+        });
+    
 }
+
