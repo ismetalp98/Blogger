@@ -2,7 +2,7 @@ function logIn(){
     var email = document.getElementById("input-email").value;
     var pss = document.getElementById("input-pss").value;
     firebase.auth().signInWithEmailAndPassword(email, pss).then(function(){
-      window.location.href = "../htmls/userpage.html"
+      window.location.replace( "../htmls/userpage.html");
     }).catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
